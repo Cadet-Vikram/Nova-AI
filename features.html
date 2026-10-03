@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Features — NOVA AI Assistant</title>
+  <meta name="description" content="Explore all features of NOVA — offline chat, voice input, document reading, streaming responses and more."/>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="icon" href="assets/icon.ico"/>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo"><span class="logo-hex">⬡</span><span>NOVA</span></a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="features.html" class="active">Features</a>
+        <a href="docs.html">Docs</a>
+        <a href="faq.html">FAQ</a>
+        <a href="index.html#download" class="nav-cta">Download</a>
+      </div>
+      <button class="nav-hamburger" id="hamburger">&#9776;</button>
+    </div>
+    <div class="nav-mobile" id="navMobile">
+      <a href="index.html">Home</a>
+      <a href="features.html">Features</a>
+      <a href="docs.html">Docs</a>
+      <a href="faq.html">FAQ</a>
+      <a href="index.html#download">Download</a>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="section-label">Features</div>
+      <h1>Everything you need, nothing you don't</h1>
+      <p class="section-sub">NOVA is built around one principle — your AI assistant should work for you, not report back to a server.</p>
+    </div>
+  </section>
+
+  <section class="features-detail">
+    <div class="container">
+
+      <div class="feature-row">
+        <div class="feature-text">
+          <div class="feature-tag">Core</div>
+          <h2>Streaming chat</h2>
+          <p>Responses stream token-by-token as the model generates them — exactly like ChatGPT, but entirely on your machine. No waiting for a full response to arrive.</p>
+          <p>Conversations are saved locally and organized in a sidebar so you can pick up where you left off.</p>
+          <ul>
+            <li>Full conversation history</li>
+            <li>Markdown and code block rendering</li>
+            <li>System prompt customization per session</li>
+          </ul>
+        </div>
+        <div class="feature-visual">
+          <div class="chat-demo">
+            <div class="demo-msg user">Explain recursion in one sentence</div>
+            <div class="demo-msg ai streaming">
+              <span class="ai-dot">⬡</span>
+              Recursion is when a function calls <span class="cursor">|</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="feature-row reverse">
+        <div class="feature-text">
+          <div class="feature-tag">Voice</div>
+          <h2>Offline voice input</h2>
+          <p>Speak naturally and NOVA transcribes your words using <strong>faster-whisper</strong> running locally on your CPU. No microphone data is ever sent to any server.</p>
+          <p>Click the mic — speak as long as you need — click again to stop and send. Words appear in the input box in real time.</p>
+          <ul>
+            <li>Powered by OpenAI Whisper (local)</li>
+            <li>Works with any Windows microphone</li>
+            <li>Transcribes in rolling 4-second chunks</li>
+            <li>Auto-sends when you stop recording</li>
+          </ul>
+        </div>
+        <div class="feature-visual">
+          <div class="voice-demo">
+            <div class="voice-circle listening">
+              <span>🎤</span>
+            </div>
+            <div class="voice-text">🔴 Listening · 12 words — click to stop & send</div>
+            <div class="voice-input-preview">"Can you help me write a cover letter for..."</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="feature-row">
+        <div class="feature-text">
+          <div class="feature-tag">Documents</div>
+          <h2>Ask questions about your files</h2>
+          <p>Attach a document to your conversation and ask anything about it. NOVA reads the content and answers based on what's in the file.</p>
+          <ul>
+            <li>PDF files</li>
+            <li>Word documents (.docx)</li>
+            <li>Plain text and Markdown</li>
+          </ul>
+          <p>Great for summarizing reports, extracting key points from contracts, or understanding long documents quickly.</p>
+        </div>
+        <div class="feature-visual">
+          <div class="doc-demo">
+            <div class="doc-file">
+              <span>📄</span>
+              <span>Q3_Report.pdf</span>
+              <span class="doc-remove">✕</span>
+            </div>
+            <div class="demo-msg user">What were the top 3 risks mentioned?</div>
+            <div class="demo-msg ai small">
+              <span class="ai-dot">⬡</span>
+              Based on the document, the top risks are: supply chain delays, rising material costs, and regulatory changes in Q4.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="feature-row reverse">
+        <div class="feature-text">
+          <div class="feature-tag">Customization</div>
+          <h2>Settings built for power users</h2>
+          <p>Every aspect of the assistant's behavior is configurable through the settings panel.</p>
+          <ul>
+            <li><strong>Model selector</strong> — switch between installed Ollama models</li>
+            <li><strong>Temperature</strong> — control creativity vs. precision</li>
+            <li><strong>Context window</strong> — tune speed vs. memory</li>
+            <li><strong>System prompt</strong> — define the AI's persona</li>
+            <li><strong>Theme</strong> — Dark, Dim, or Light</li>
+            <li><strong>Accent color</strong> — 6 presets + custom picker</li>
+            <li><strong>Keyboard shortcuts</strong> — rebind anything</li>
+          </ul>
+        </div>
+        <div class="feature-visual">
+          <div class="settings-demo">
+            <div class="setting-row">
+              <span>Model</span>
+              <span class="setting-val">phi3</span>
+            </div>
+            <div class="setting-row">
+              <span>Temperature</span>
+              <div class="mini-slider"><div class="mini-thumb" style="left:50%"></div></div>
+              <span class="setting-val">0.7</span>
+            </div>
+            <div class="setting-row">
+              <span>Context window</span>
+              <div class="mini-slider"><div class="mini-thumb" style="left:25%"></div></div>
+              <span class="setting-val">2048</span>
+            </div>
+            <div class="setting-row">
+              <span>Theme</span>
+              <span class="setting-val">Dark</span>
+            </div>
+            <div class="setting-row">
+              <span>Accent</span>
+              <div class="color-dots">
+                <span style="background:#7c6aff" class="active"></span>
+                <span style="background:#3b82f6"></span>
+                <span style="background:#22c55e"></span>
+                <span style="background:#f59e0b"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="shortcuts-section">
+    <div class="container">
+      <div class="section-label">Keyboard shortcuts</div>
+      <h2>Built for keyboard-first users</h2>
+      <p class="section-sub">All shortcuts are rebindable from the settings panel.</p>
+      <div class="shortcuts-grid">
+        <div class="shortcut-row"><kbd>Ctrl+N</kbd><span>New chat</span></div>
+        <div class="shortcut-row"><kbd>Ctrl+L</kbd><span>Clear conversation</span></div>
+        <div class="shortcut-row"><kbd>Ctrl+,</kbd><span>Open settings</span></div>
+        <div class="shortcut-row"><kbd>Ctrl+/</kbd><span>Focus input</span></div>
+        <div class="shortcut-row"><kbd>Enter</kbd><span>Send message</span></div>
+        <div class="shortcut-row"><kbd>Shift+Enter</kbd><span>New line</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <h2>Ready to try it?</h2>
+      <p>Download NOVA and have an AI assistant running on your PC in minutes.</p>
+      <a href="index.html#download" class="btn-primary large">Download for Windows →</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span class="logo-hex">⬡</span>
+          <span class="footer-name">NOVA</span>
+          <p>Offline AI assistant for Windows.</p>
+        </div>
+        <div class="footer-links">
+          <div><h5>Product</h5><a href="features.html">Features</a><a href="index.html#download">Download</a><a href="faq.html">FAQ</a></div>
+          <div><h5>Resources</h5><a href="docs.html">Documentation</a><a href="docs.html#quickstart">Quick start</a><a href="https://github.com/YOUR_USERNAME/nova-ai">GitHub</a></div>
+        </div>
+      </div>
+      <div class="footer-bottom"><span>© 2025 NOVA. Built with ❤️ for privacy.</span><span>Open source · MIT License</span></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('hamburger').addEventListener('click', () => {
+      document.getElementById('navMobile').classList.toggle('open');
+    });
+  </script>
+</body>
+</html>

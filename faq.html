@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FAQ — NOVA AI Assistant</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="icon" href="assets/icon.ico"/>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo"><span class="logo-hex">⬡</span><span>NOVA</span></a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="features.html">Features</a>
+        <a href="docs.html">Docs</a>
+        <a href="faq.html" class="active">FAQ</a>
+        <a href="index.html#download" class="nav-cta">Download</a>
+      </div>
+      <button class="nav-hamburger" id="hamburger">&#9776;</button>
+    </div>
+    <div class="nav-mobile" id="navMobile">
+      <a href="index.html">Home</a>
+      <a href="features.html">Features</a>
+      <a href="docs.html">Docs</a>
+      <a href="faq.html">FAQ</a>
+      <a href="index.html#download">Download</a>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="section-label">FAQ</div>
+      <h1>Frequently asked questions</h1>
+      <p class="section-sub">Can't find what you're looking for? Open an issue on <a href="https://github.com/YOUR_USERNAME/nova-ai/issues">GitHub</a>.</p>
+    </div>
+  </section>
+
+  <section class="faq-section">
+    <div class="container faq-container">
+
+      <div class="faq-group">
+        <h2>General</h2>
+
+        <div class="faq-item">
+          <button class="faq-q">Is NOVA really free?</button>
+          <div class="faq-a">
+            <p>Yes — completely free, forever. NOVA is open source (MIT license). There are no subscriptions, no usage limits, and no hidden costs. The AI models it uses (Llama 3, Phi-3) are also free and open source.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">Does NOVA send any data to the internet?</button>
+          <div class="faq-a">
+            <p>No. Once installed, NOVA runs entirely offline. Your conversations, documents, and voice recordings never leave your machine. The only internet usage is the initial download of the installer and AI model.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">How is this different from ChatGPT?</button>
+          <div class="faq-a">
+            <p>ChatGPT runs on OpenAI's servers — your messages are sent to them and processed in the cloud. NOVA runs entirely on your computer. It's slower on modest hardware, but your data never leaves your machine and there's no subscription required.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">What operating systems does NOVA support?</button>
+          <div class="faq-a">
+            <p>Currently Windows 10 and Windows 11 (64-bit only). macOS and Linux versions may come in the future.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-group">
+        <h2>Installation</h2>
+
+        <div class="faq-item">
+          <button class="faq-q">Windows says the installer is unsafe. Is it?</button>
+          <div class="faq-a">
+            <p>This is a Windows SmartScreen warning that appears for apps that aren't code-signed. NOVA is open source and safe — you can inspect the full source code on GitHub. Click "More info" then "Run anyway" to proceed.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">Why is the installer so large (~5 GB)?</button>
+          <div class="faq-a">
+            <p>The installer bundles everything needed to run offline: the Electron app (~150 MB), Ollama runtime (~90 MB), and the Phi-3 AI model (~2.3 GB). This is intentional — after installation, no internet is needed at all.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">Can I install NOVA without admin rights?</button>
+          <div class="faq-a">
+            <p>The installer asks for admin rights to install to Program Files. If you don't have admin rights, choose a different installation directory (like your Documents folder) during setup.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-group">
+        <h2>Performance</h2>
+
+        <div class="faq-item">
+          <button class="faq-q" id="ollama-offline">The status shows "Ollama offline". What do I do?</button>
+          <div class="faq-a">
+            <p>This usually means Ollama didn't start correctly. Try:</p>
+            <ol>
+              <li>Close and reopen NOVA</li>
+              <li>Check Task Manager for <code>ollama.exe</code> — if it's there, wait 10 seconds and try again</li>
+              <li>If it's not there, NOVA may have had trouble starting it. Open a terminal and run <code>ollama serve</code> manually, then reopen NOVA</li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">Responses are very slow. How do I speed things up?</button>
+          <div class="faq-a">
+            <p>NOVA runs on CPU by default, which is slower than cloud AI. To improve speed:</p>
+            <ul>
+              <li>Switch to <strong>Phi-3</strong> in the model dropdown (faster than Llama 3)</li>
+              <li>Lower the <strong>context window</strong> to 1024 in settings</li>
+              <li>Lower <strong>max tokens</strong> to 512</li>
+              <li>Close other memory-heavy applications</li>
+              <li>If you have an NVIDIA GPU, set GPU layers to 20–35 in settings</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">How much RAM does NOVA need?</button>
+          <div class="faq-a">
+            <p>It depends on the model. Phi-3 Mini needs about 3–4 GB of RAM for the model itself. We recommend 8 GB total system RAM as a minimum, with 16 GB for a comfortable experience. Llama 3 (8B) requires about 6–8 GB for the model.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-group">
+        <h2>Voice input</h2>
+
+        <div class="faq-item">
+          <button class="faq-q">Voice input shows "pip install" instructions even though I installed it.</button>
+          <div class="faq-a">
+            <p>This usually means NOVA can't find your Python installation. Try:</p>
+            <ol>
+              <li>Open a terminal and run: <code>python -c "import faster_whisper; import sounddevice; print('OK')"</code></li>
+              <li>If that prints OK but the app still shows the error, restart NOVA after installing</li>
+              <li>Make sure Python is added to your system PATH during installation</li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">The mic level shows 0.0000 — it's not picking up my voice.</button>
+          <div class="faq-a">
+            <p>This is a Windows microphone privacy issue. Go to <strong>Win + I → Privacy & Security → Microphone</strong> and make sure <strong>"Let desktop apps access your microphone"</strong> is turned ON. Also check that your microphone volume isn't set to 0 in Sound Settings.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q">Voice input works but takes a long time to transcribe.</button>
+          <div class="faq-a">
+            <p>Whisper transcription runs on CPU and takes 1–5 seconds per 4-second audio chunk depending on your hardware. This is normal. The transcription happens in the background — you'll see words appear in the input box as each chunk completes.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <div class="container">
+      <h2>Still have questions?</h2>
+      <p>Open an issue on GitHub and we'll help you out.</p>
+      <a href="https://github.com/YOUR_USERNAME/nova-ai/issues" class="btn-primary large">Ask on GitHub →</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand"><span class="logo-hex">⬡</span><span class="footer-name">NOVA</span><p>Offline AI assistant for Windows.</p></div>
+        <div class="footer-links">
+          <div><h5>Product</h5><a href="features.html">Features</a><a href="index.html#download">Download</a><a href="faq.html">FAQ</a></div>
+          <div><h5>Resources</h5><a href="docs.html">Documentation</a><a href="https://github.com/YOUR_USERNAME/nova-ai">GitHub</a></div>
+        </div>
+      </div>
+      <div class="footer-bottom"><span>© 2025 NOVA. Built with ❤️ for privacy.</span><span>Open source · MIT License</span></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('hamburger').addEventListener('click', () => {
+      document.getElementById('navMobile').classList.toggle('open');
+    });
+    document.querySelectorAll('.faq-q').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Documentation — NOVA AI Assistant</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="icon" href="assets/icon.ico"/>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo"><span class="logo-hex">⬡</span><span>NOVA</span></a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="features.html">Features</a>
+        <a href="docs.html" class="active">Docs</a>
+        <a href="faq.html">FAQ</a>
+        <a href="index.html#download" class="nav-cta">Download</a>
+      </div>
+      <button class="nav-hamburger" id="hamburger">&#9776;</button>
+    </div>
+    <div class="nav-mobile" id="navMobile">
+      <a href="index.html">Home</a>
+      <a href="features.html">Features</a>
+      <a href="docs.html">Docs</a>
+      <a href="faq.html">FAQ</a>
+      <a href="index.html#download">Download</a>
+    </div>
+  </nav>
+
+  <div class="docs-layout">
+    <aside class="docs-sidebar">
+      <div class="docs-nav">
+        <div class="docs-nav-group">
+          <div class="docs-nav-label">Getting started</div>
+          <a href="#quickstart" class="docs-nav-link active">Quick start</a>
+          <a href="#install" class="docs-nav-link">Installation</a>
+          <a href="#first-launch" class="docs-nav-link">First launch</a>
+        </div>
+        <div class="docs-nav-group">
+          <div class="docs-nav-label">Using NOVA</div>
+          <a href="#chat" class="docs-nav-link">Chat</a>
+          <a href="#voice" class="docs-nav-link">Voice input</a>
+          <a href="#documents" class="docs-nav-link">Documents</a>
+          <a href="#settings" class="docs-nav-link">Settings</a>
+          <a href="#shortcuts" class="docs-nav-link">Shortcuts</a>
+        </div>
+        <div class="docs-nav-group">
+          <div class="docs-nav-label">Advanced</div>
+          <a href="#models" class="docs-nav-link">Switching models</a>
+          <a href="#performance" class="docs-nav-link">Performance tips</a>
+          <a href="#gpu" class="docs-nav-link">GPU acceleration</a>
+        </div>
+      </div>
+    </aside>
+
+    <main class="docs-main">
+
+      <h1 id="quickstart">Quick start</h1>
+      <p class="docs-lead">Get NOVA running in under 5 minutes.</p>
+
+      <div class="steps-doc">
+        <div class="step-doc">
+          <div class="step-doc-num">1</div>
+          <div class="step-doc-body">
+            <h3>Download the installer</h3>
+            <p>Go to the <a href="index.html#download">download page</a> and click <strong>Download NOVA</strong>. The installer is about 5 GB and includes everything you need.</p>
+          </div>
+        </div>
+        <div class="step-doc">
+          <div class="step-doc-num">2</div>
+          <div class="step-doc-body">
+            <h3>Run the installer</h3>
+            <p>Double-click <code>AI Assistant Setup.exe</code>. Click <strong>Next → Install → Finish</strong>. Windows may show a SmartScreen warning — click "More info" then "Run anyway" since NOVA is not yet code-signed.</p>
+          </div>
+        </div>
+        <div class="step-doc">
+          <div class="step-doc-num">3</div>
+          <div class="step-doc-body">
+            <h3>Launch NOVA</h3>
+            <p>Open NOVA from your desktop shortcut or Start menu. The first launch takes 15–30 seconds as the AI model loads. After that, it's instant.</p>
+          </div>
+        </div>
+        <div class="step-doc">
+          <div class="step-doc-num">4</div>
+          <div class="step-doc-body">
+            <h3>Start chatting</h3>
+            <p>Type your message and press <kbd>Enter</kbd>. You should see the AI response streaming in within a few seconds. You're all set!</p>
+          </div>
+        </div>
+      </div>
+
+      <hr class="docs-divider"/>
+
+      <h2 id="install">Installation details</h2>
+      <p>NOVA installs to <code>C:\Program Files\AI Assistant\</code> by default. You can change this during setup.</p>
+      <p>The installer creates:</p>
+      <ul>
+        <li>A desktop shortcut</li>
+        <li>A Start menu entry under <strong>AI Assistant</strong></li>
+        <li>An uninstaller accessible from Windows Settings → Apps</li>
+      </ul>
+
+      <div class="callout callout-info">
+        <strong>Note:</strong> The installer bundles Ollama and the Phi-3 model. If you already have Ollama installed on your system, NOVA will use its own bundled version to avoid conflicts.
+      </div>
+
+      <hr class="docs-divider"/>
+
+      <h2 id="first-launch">First launch</h2>
+      <p>On first launch, NOVA automatically starts Ollama in the background. You'll see the status indicator in the bottom-left sidebar turn <span style="color:#22c55e">green</span> when Ollama is connected and ready.</p>
+      <p>If it stays red, see the <a href="faq.html#ollama-offline">FAQ: Ollama shows offline</a>.</p>
+
+      <hr class="docs-divider"/>
+
+      <h2 id="chat">Chatting</h2>
+      <p>Type your message in the input box at the bottom and press <kbd>Enter</kbd> to send. Use <kbd>Shift+Enter</kbd> to add a new line without sending.</p>
+      <p>Responses stream in as they're generated. You can start reading the answer before it's finished.</p>
+      <p>Past conversations appear in the left sidebar. Click any to continue from where you left off.</p>
+
+      <hr class="docs-divider"/>
+
+      <h2 id="voice">Voice input</h2>
+      <p>Click the microphone button (🎤) in the input area to start recording. Speak naturally — NOVA transcribes your words in real time using Whisper running locally.</p>
+      <p>Click the mic again (or press <kbd>Enter</kbd>) to stop recording and send the message automatically.</p>
+
+      <div class="callout callout-warning">
+        <strong>First time only:</strong> Voice input requires Python with <code>faster-whisper</code> installed. If prompted, run: <code>pip install faster-whisper sounddevice</code> in a terminal.
+      </div>
+
+      <p>Make sure Windows mic privacy is enabled: <strong>Win + I → Privacy & Security → Microphone → Let desktop apps access your microphone → ON</strong></p>
+
+      <hr class="docs-divider"/>
+
+      <h2 id="documents">Document reading</h2>
+      <p>Click the 📎 button in the top bar to attach a file. Supported formats:</p>
+      <ul>
+        <li>PDF (<code>.pdf</code>)</li>
+        <li>Word documents (<code>.docx</code>)</li>
+        <li>Plain text (<code>.txt</code>)</li>
+        <li>Markdown (<code>.md</code>)</li>
+      </ul>
+      <p>After attaching, type your question as normal. The first 5,000 characters of the file will be included as context for the AI.</p>
+
+      <hr class="docs-divider"/>
+
+      <h2 id="settings">Settings</h2>
+      <p>Open settings with <kbd>Ctrl+,</kbd> or the ⚙ button in the sidebar.</p>
+
+      <h3>Model & performance</h3>
+      <table class="docs-table">
+        <tr><th>Setting</th><th>What it does</th><th>Default</th></tr>
+        <tr><td>Model</td><td>Which Ollama model to use</td><td>phi3</td></tr>
+        <tr><td>Temperature</td><td>Creativity (0 = precise, 1 = creative)</td><td>0.7</td></tr>
+        <tr><td>Max tokens</td><td>Maximum response length</td><td>1024</td></tr>
+        <tr><td>Context window</td><td>How much of the conversation the AI remembers</td><td>2048</td></tr>
+        <tr><td>GPU layers</td><td>Offload layers to GPU (0 = CPU only)</td><td>0</td></tr>
+      </table>
+
+      <hr class="docs-divider"/>
+
+      <h2 id="shortcuts">Keyboard shortcuts</h2>
+      <table class="docs-table">
+        <tr><th>Shortcut</th><th>Action</th></tr>
+        <tr><td><kbd>Enter</kbd></td><td>Send message</td></tr>
+        <tr><td><kbd>Shift+Enter</kbd></td><td>New line</td></tr>
+        <tr><td><kbd>Ctrl+N</kbd></td><td>New chat</td></tr>
+        <tr><td><kbd>Ctrl+L</kbd></td><td>Clear conversation</td></tr>
+        <tr><td><kbd>Ctrl+,</kbd></td><td>Open settings</td></tr>
+        <tr><td><kbd>Ctrl+/</kbd></td><td>Focus input</td></tr>
+      </table>
+      <p>All shortcuts can be rebound in Settings → Keyboard Shortcuts.</p>
+
+      <hr class="docs-divider"/>
+
+      <h2 id="models">Switching models</h2>
+      <p>Use the model dropdown in the sidebar to switch between installed models. To add a new model, open a terminal and run:</p>
+      <div class="code-block">ollama pull mistral</div>
+      <p>The new model will appear automatically in the dropdown after restarting NOVA.</p>
+
+      <hr class="docs-divider"/>
+
+      <h2 id="performance">Performance tips</h2>
+      <p>NOVA runs on CPU by default. For faster responses:</p>
+      <ul>
+        <li><strong>Use Phi-3</strong> — it's 2–3× faster than Llama 3 on CPU</li>
+        <li><strong>Lower the context window</strong> — set it to 1024 or even 512 in settings for much faster responses</li>
+        <li><strong>Lower max tokens</strong> — set to 512 for quick answers</li>
+        <li><strong>Close other apps</strong> — LLMs are memory-intensive</li>
+      </ul>
+
+      <hr class="docs-divider"/>
+
+      <h2 id="gpu">GPU acceleration</h2>
+      <p>If you have an NVIDIA GPU, you can speed up NOVA significantly:</p>
+      <ol>
+        <li>Open Settings → Model & Performance</li>
+        <li>Set <strong>GPU Layers</strong> to 20–35</li>
+        <li>Start a new chat — responses should be noticeably faster</li>
+      </ol>
+      <p>To find your GPU: press <kbd>Win+R</kbd>, type <code>dxdiag</code>, go to the Display tab.</p>
+      <div class="callout callout-info">
+        Intel integrated graphics (UHD, Iris) are not supported for GPU acceleration. AMD GPU support depends on your Ollama version.
+      </div>
+
+    </main>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand"><span class="logo-hex">⬡</span><span class="footer-name">NOVA</span><p>Offline AI assistant for Windows.</p></div>
+        <div class="footer-links">
+          <div><h5>Product</h5><a href="features.html">Features</a><a href="index.html#download">Download</a><a href="faq.html">FAQ</a></div>
+          <div><h5>Resources</h5><a href="docs.html">Documentation</a><a href="https://github.com/YOUR_USERNAME/nova-ai">GitHub</a></div>
+        </div>
+      </div>
+      <div class="footer-bottom"><span>© 2025 NOVA. Built with ❤️ for privacy.</span><span>Open source · MIT License</span></div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('hamburger').addEventListener('click', () => {
+      document.getElementById('navMobile').classList.toggle('open');
+    });
+    document.querySelectorAll('.docs-nav-link').forEach(link => {
+      link.addEventListener('click', function() {
+        document.querySelectorAll('.docs-nav-link').forEach(l => l.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
