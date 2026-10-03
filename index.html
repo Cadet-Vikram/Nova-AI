@@ -7,275 +7,405 @@
   <meta name="description" content="NOVA is a fully offline AI assistant for Windows. No cloud. No subscriptions. Your data stays on your machine."/>
   <meta property="og:title" content="NOVA — Offline AI Assistant"/>
   <meta property="og:description" content="Powerful AI on your PC. No internet required. Free forever."/>
-  <meta property="og:type" content="website"/>
   <link rel="stylesheet" href="style.css"/>
-  <link rel="icon" href="assets/icon.ico"/>
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav class="nav">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-logo">
-        <span class="logo-hex">⬡</span>
-        <span>NOVA</span>
-      </a>
-      <div class="nav-links">
-        <a href="index.html" class="active">Home</a>
-        <a href="features.html">Features</a>
-        <a href="docs.html">Docs</a>
-        <a href="faq.html">FAQ</a>
-        <a href="#download" class="nav-cta">Download</a>
-      </div>
-      <button class="nav-hamburger" id="hamburger" aria-label="Menu">&#9776;</button>
-    </div>
-    <div class="nav-mobile" id="navMobile">
-      <a href="index.html">Home</a>
+<!-- ── Animated background ── -->
+<div class="bg-grid"></div>
+<div class="bg-glow"></div>
+
+<!-- ── NAV ── -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <svg class="hex-logo" viewBox="0 0 40 46" fill="none">
+        <path d="M20 2L37 11.5V29.5L20 39L3 29.5V11.5L20 2Z" stroke="url(#grad)" stroke-width="2" fill="none"/>
+        <text x="50%" y="56%" dominant-baseline="middle" text-anchor="middle" fill="url(#grad)" font-size="14" font-weight="bold">N</text>
+        <defs>
+          <linearGradient id="grad" x1="0" y1="0" x2="40" y2="46" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#7c6aff"/>
+            <stop offset="100%" stop-color="#a78bfa"/>
+          </linearGradient>
+        </defs>
+      </svg>
+      <span>NOVA</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html" class="active">Home</a>
       <a href="features.html">Features</a>
       <a href="docs.html">Docs</a>
       <a href="faq.html">FAQ</a>
-      <a href="#download">Download</a>
-    </div>
-  </nav>
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-badge">🔒 100% Offline · No Subscription · Free Forever</div>
-    <h1 class="hero-title">Your AI assistant.<br/>Runs on <span class="accent">your PC</span>.</h1>
-    <p class="hero-sub">NOVA is a powerful offline AI assistant for Windows. Powered by Llama 3 and Phi-3, everything runs locally — your conversations, your documents, your voice. Nothing ever leaves your machine.</p>
-    <div class="hero-actions">
-      <a href="#download" class="btn-primary">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-        Download for Windows
+      <a href="https://github.com/Cadet-Vikram/Nova-AI" target="_blank" class="nav-github">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        GitHub
       </a>
-      <a href="features.html" class="btn-ghost">See all features →</a>
+      <a href="#download" class="nav-cta">Download Free</a>
     </div>
-    <div class="hero-meta">
-      <span>✓ Windows 10/11</span>
-      <span>✓ No internet after install</span>
-      <span>✓ One-click setup</span>
+    <button class="nav-hamburger" id="hamburger">&#9776;</button>
+  </div>
+  <div class="nav-mobile" id="navMobile">
+    <a href="index.html">Home</a>
+    <a href="features.html">Features</a>
+    <a href="docs.html">Docs</a>
+    <a href="faq.html">FAQ</a>
+    <a href="https://github.com/Cadet-Vikram/Nova-AI" target="_blank">GitHub</a>
+    <a href="#download">Download</a>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-badge reveal">
+      <span class="badge-dot"></span>
+      100% Offline · No Subscription · Free Forever
     </div>
 
-    <!-- App preview -->
-    <div class="app-preview">
-      <div class="preview-bar">
-        <span class="dot red"></span>
-        <span class="dot yellow"></span>
-        <span class="dot green"></span>
-        <span class="preview-title">AI Assistant</span>
+    <h1 class="hero-title reveal">
+      Your AI assistant.<br/>
+      Runs on <span class="gradient-text">your PC</span>.
+    </h1>
+
+    <p class="hero-sub reveal">
+      NOVA brings the power of Llama 3 and Phi-3 directly to your Windows machine.
+      No cloud. No monthly fees. No data leaving your computer — ever.
+    </p>
+
+    <div class="hero-actions reveal">
+      <a href="https://github.com/Cadet-Vikram/Nova-AI/releases/latest/download/AI.Assistant.Setup.exe" class="btn-primary glow-btn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download for Windows — Free
+      </a>
+      <a href="features.html" class="btn-ghost">Explore features →</a>
+    </div>
+
+    <div class="hero-pills reveal">
+      <span class="pill">✓ Windows 10/11</span>
+      <span class="pill">✓ Works offline</span>
+      <span class="pill">✓ One-click setup</span>
+      <span class="pill">✓ No account needed</span>
+    </div>
+  </div>
+
+  <!-- Animated app window -->
+  <div class="hero-visual reveal-right">
+    <div class="app-window">
+      <div class="window-bar">
+        <div class="window-dots">
+          <span class="wd red"></span>
+          <span class="wd yellow"></span>
+          <span class="wd green"></span>
+        </div>
+        <span class="window-title">NOVA — AI Assistant</span>
+        <div class="window-status">
+          <span class="online-dot"></span>
+          <span>Ollama connected</span>
+        </div>
       </div>
-      <div class="preview-body">
-        <div class="preview-sidebar">
-          <div class="preview-logo">⬡ NOVA</div>
-          <div class="preview-history">
-            <div class="preview-chat-item active">Python help</div>
-            <div class="preview-chat-item">Draft email</div>
-            <div class="preview-chat-item">Summarize doc</div>
-          </div>
-          <div class="preview-status">
-            <span class="status-dot online"></span> Ollama connected
+      <div class="window-body">
+        <div class="win-sidebar">
+          <div class="win-logo">⬡ NOVA</div>
+          <button class="win-new-chat">＋ New Chat</button>
+          <div class="win-history">
+            <div class="win-hist-item active">Python help</div>
+            <div class="win-hist-item">Draft an email</div>
+            <div class="win-hist-item">Summarize PDF</div>
           </div>
         </div>
-        <div class="preview-main">
-          <div class="preview-msg user">How do I reverse a string in Python?</div>
-          <div class="preview-msg ai">
-            <span class="ai-icon">⬡</span>
-            <div>The simplest way is using slicing:<br/>
-            <code>text[::-1]</code><br/>
-            Or use <code>reversed()</code> with <code>join()</code> for readability.</div>
+        <div class="win-main">
+          <div class="win-messages" id="winMessages">
+            <div class="win-msg user" id="m1">How do I reverse a string in Python?</div>
+            <div class="win-msg ai" id="m2">
+              <span class="win-ai-icon">⬡</span>
+              <div class="win-msg-text" id="streamText"></div>
+            </div>
           </div>
-          <div class="preview-input">
-            <span>Message NOVA…</span>
-            <span class="preview-send">↑</span>
+          <div class="win-input-bar">
+            <span class="win-input-placeholder">Message NOVA…</span>
+            <div class="win-input-actions">
+              <span class="win-mic">🎤</span>
+              <span class="win-send">↑</span>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
+    <!-- Floating badges -->
+    <div class="float-badge badge-1">🔒 Zero cloud</div>
+    <div class="float-badge badge-2">⚡ Streams live</div>
+    <div class="float-badge badge-3">🎤 Voice input</div>
+  </div>
+</section>
 
-  <!-- FEATURES STRIP -->
-  <section class="features-strip">
-    <div class="container">
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon">🔒</div>
-          <h3>Fully offline</h3>
-          <p>No cloud APIs. No data collection. Everything runs on your hardware — even after you turn off Wi-Fi.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">🎤</div>
-          <h3>Voice input</h3>
-          <p>Speak naturally. NOVA transcribes your voice locally using Whisper — no microphone data sent anywhere.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">📄</div>
-          <h3>Document reading</h3>
-          <p>Upload PDFs, Word docs, and text files. Ask questions about them directly in the chat.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">⚡</div>
-          <h3>Streaming responses</h3>
-          <p>Words appear as they're generated — just like ChatGPT, but running entirely on your machine.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">⚙️</div>
-          <h3>Customizable</h3>
-          <p>Control the model, temperature, system prompt, themes, and keyboard shortcuts from the settings panel.</p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">🖥️</div>
-          <h3>System tray</h3>
-          <p>NOVA lives in your tray and is one click away. Minimize it and it stays ready in the background.</p>
-        </div>
+<!-- ── LOGOS / TRUST ── -->
+<div class="trust-bar reveal">
+  <span class="trust-label">Powered by</span>
+  <span class="trust-item">⬡ Ollama</span>
+  <span class="trust-sep">·</span>
+  <span class="trust-item">🦙 Llama 3</span>
+  <span class="trust-sep">·</span>
+  <span class="trust-item">🔷 Phi-3</span>
+  <span class="trust-sep">·</span>
+  <span class="trust-item">⚡ Electron</span>
+  <span class="trust-sep">·</span>
+  <span class="trust-item">🎙 Whisper</span>
+</div>
+
+<!-- ── FEATURES ── -->
+<section class="features-section">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">Features</div>
+      <h2>Everything you need, nothing you don't</h2>
+    </div>
+
+    <div class="features-grid">
+      <div class="feat-card reveal" style="--delay:0ms">
+        <div class="feat-icon-wrap"><span class="feat-icon">🔒</span></div>
+        <h3>Fully offline</h3>
+        <p>Zero cloud. Zero data collection. Even works when your Wi-Fi is off. Your conversations stay on your machine — always.</p>
+      </div>
+      <div class="feat-card reveal" style="--delay:80ms">
+        <div class="feat-icon-wrap"><span class="feat-icon">⚡</span></div>
+        <h3>Streaming responses</h3>
+        <p>Words appear as the model generates them — token by token, just like ChatGPT. No waiting for a full response.</p>
+      </div>
+      <div class="feat-card reveal" style="--delay:160ms">
+        <div class="feat-icon-wrap"><span class="feat-icon">🎤</span></div>
+        <h3>Offline voice input</h3>
+        <p>Speak and NOVA transcribes locally using Whisper. Your microphone data never touches a server.</p>
+      </div>
+      <div class="feat-card reveal" style="--delay:240ms">
+        <div class="feat-icon-wrap"><span class="feat-icon">📄</span></div>
+        <h3>Document reading</h3>
+        <p>Upload PDFs, Word docs, and text files. Ask questions about them directly in the chat.</p>
+      </div>
+      <div class="feat-card reveal" style="--delay:320ms">
+        <div class="feat-icon-wrap"><span class="feat-icon">⚙️</span></div>
+        <h3>Deep customization</h3>
+        <p>Control model, temperature, context window, themes, accent colors, and rebindable keyboard shortcuts.</p>
+      </div>
+      <div class="feat-card reveal" style="--delay:400ms">
+        <div class="feat-icon-wrap"><span class="feat-icon">🖥️</span></div>
+        <h3>System tray</h3>
+        <p>NOVA lives in your tray and is one click away. Minimize and it stays ready in the background.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- HOW IT WORKS -->
-  <section class="how-it-works">
-    <div class="container">
+<!-- ── COMPARISON ── -->
+<section class="compare-section">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label">Why NOVA?</div>
+      <h2>AI without the compromises</h2>
+    </div>
+    <div class="compare-table reveal">
+      <div class="compare-header">
+        <div></div>
+        <div class="compare-col nova">⬡ NOVA</div>
+        <div class="compare-col other">Cloud AI</div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-feature">Works offline</div>
+        <div class="compare-val yes">✓</div>
+        <div class="compare-val no">✗</div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-feature">Data stays on your PC</div>
+        <div class="compare-val yes">✓</div>
+        <div class="compare-val no">✗</div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-feature">No subscription</div>
+        <div class="compare-val yes">✓</div>
+        <div class="compare-val no">✗</div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-feature">No account required</div>
+        <div class="compare-val yes">✓</div>
+        <div class="compare-val no">✗</div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-feature">Voice input</div>
+        <div class="compare-val yes">✓</div>
+        <div class="compare-val meh">Some</div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-feature">Document reading</div>
+        <div class="compare-val yes">✓</div>
+        <div class="compare-val meh">Paid tier</div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-feature">Open source</div>
+        <div class="compare-val yes">✓</div>
+        <div class="compare-val no">✗</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── HOW IT WORKS ── -->
+<section class="how-section">
+  <div class="container">
+    <div class="section-header reveal">
       <div class="section-label">How it works</div>
-      <h2>Everything stays on your machine</h2>
-      <p class="section-sub">NOVA uses Ollama to run large language models locally. No requests ever leave your computer.</p>
-      <div class="steps">
-        <div class="step">
-          <div class="step-num">1</div>
-          <div class="step-body">
-            <h4>Download & install</h4>
-            <p>One installer bundles everything — the app, Ollama, and the AI model. Just double-click and it works.</p>
-          </div>
-        </div>
-        <div class="step-arrow">→</div>
-        <div class="step">
-          <div class="step-num">2</div>
-          <div class="step-body">
-            <h4>Launch NOVA</h4>
-            <p>The app starts Ollama automatically in the background. No terminal, no setup commands needed.</p>
-          </div>
-        </div>
-        <div class="step-arrow">→</div>
-        <div class="step">
-          <div class="step-num">3</div>
-          <div class="step-body">
-            <h4>Start chatting</h4>
-            <p>Ask questions, upload documents, or speak — the AI responds in seconds, entirely offline.</p>
-          </div>
-        </div>
+      <h2>Up and running in minutes</h2>
+    </div>
+    <div class="steps-row">
+      <div class="step-card reveal" style="--delay:0ms">
+        <div class="step-num">01</div>
+        <div class="step-icon">⬇️</div>
+        <h3>Download</h3>
+        <p>One installer bundles the app, Ollama runtime, and the Phi-3 AI model. ~5 GB total.</p>
+      </div>
+      <div class="step-connector reveal"></div>
+      <div class="step-card reveal" style="--delay:100ms">
+        <div class="step-num">02</div>
+        <div class="step-icon">🖱️</div>
+        <h3>Install</h3>
+        <p>Double-click the installer. Next → Install → Finish. Desktop shortcut appears automatically.</p>
+      </div>
+      <div class="step-connector reveal"></div>
+      <div class="step-card reveal" style="--delay:200ms">
+        <div class="step-num">03</div>
+        <div class="step-icon">💬</div>
+        <h3>Chat</h3>
+        <p>Launch NOVA. Ollama starts in background automatically. Start chatting in seconds.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- MODELS -->
-  <section class="models-section">
-    <div class="container">
-      <div class="section-label">Supported models</div>
-      <h2>Choose your AI model</h2>
-      <p class="section-sub">NOVA works with any model installed via Ollama. Switch between them anytime from the settings.</p>
-      <div class="models-grid">
-        <div class="model-card recommended">
-          <div class="model-badge">Recommended</div>
-          <div class="model-name">Phi-3 Mini</div>
-          <div class="model-maker">Microsoft</div>
-          <div class="model-size">2.3 GB</div>
-          <p>Fast and capable. Best for everyday tasks on CPU-only machines like most laptops.</p>
-          <div class="model-tags"><span>Fast</span><span>Efficient</span><span>Capable</span></div>
-        </div>
-        <div class="model-card">
-          <div class="model-name">Llama 3 (8B)</div>
-          <div class="model-maker">Meta</div>
-          <div class="model-size">4.7 GB</div>
-          <p>More powerful responses. Better for complex reasoning, coding, and long-form writing.</p>
-          <div class="model-tags"><span>Powerful</span><span>Coding</span><span>Writing</span></div>
-        </div>
-        <div class="model-card">
-          <div class="model-name">Mistral (7B)</div>
-          <div class="model-maker">Mistral AI</div>
-          <div class="model-size">4.1 GB</div>
-          <p>Excellent instruction-following and multilingual support. Great balance of speed and quality.</p>
-          <div class="model-tags"><span>Multilingual</span><span>Balanced</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
+<!-- ── DOWNLOAD ── -->
+<section class="download-section" id="download">
+  <div class="container">
+    <div class="download-card reveal">
+      <div class="download-glow"></div>
+      <div class="download-left">
+        <div class="section-label" style="color:#a89fff">Free download</div>
+        <h2>Ready to try NOVA?</h2>
+        <p>One installer. Zero setup. Works completely offline from the first launch.</p>
+        <ul class="dl-checklist">
+          <li><span class="check">✓</span> Windows 10 / 11 (64-bit)</li>
+          <li><span class="check">✓</span> 8 GB RAM recommended</li>
+          <li><span class="check">✓</span> ~5 GB disk space</li>
+          <li><span class="check">✓</span> No internet after install</li>
+        </ul>
+        <a href="https://github.com/Cadet-Vikram/Nova-AI/releases/latest/download/AI.Assistant.Setup.exe"
+           class="btn-primary glow-btn large">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download NOVA v1.0.0
+        </a>
+        <div class="dl-meta">~5 GB · Windows only · MIT License · Free forever</div>
 
-  <!-- DOWNLOAD -->
-  <section class="download-section" id="download">
-    <div class="container">
-      <div class="download-card">
-        <div class="download-left">
-          <div class="section-label" style="color:#a89fff">Free download</div>
-          <h2>Ready to try NOVA?</h2>
-          <p>One installer. No setup. Works completely offline from the first launch.</p>
-          <ul class="download-checklist">
-            <li>✓ Windows 10 / 11 (64-bit)</li>
-            <li>✓ Minimum 8 GB RAM recommended</li>
-            <li>✓ ~5 GB disk space (includes AI model)</li>
-            <li>✓ No internet required after install</li>
-          </ul>
-          <a href="https://github.com/Cadet-Vikram/Nova-AI/releases/download/NOVA_v1_0_0/AI.Assistant.Setup.1.0.6.exe" class="btn-primary large">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            Download NOVA v1.0.0
+        <div class="dl-alt">
+          <span>Also available on</span>
+          <a href="https://github.com/Cadet-Vikram/Nova-AI" target="_blank" class="gh-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            GitHub
           </a>
-          <div class="download-meta">~5 GB installer · Windows only · Free forever</div>
         </div>
-        <div class="download-right">
-          <div class="system-req">
-            <h4>System requirements</h4>
-            <table>
-              <tr><td>OS</td><td>Windows 10 / 11 (64-bit)</td></tr>
-              <tr><td>RAM</td><td>8 GB minimum, 16 GB recommended</td></tr>
-              <tr><td>Storage</td><td>5 GB free space</td></tr>
-              <tr><td>CPU</td><td>Any modern x64 processor</td></tr>
-              <tr><td>GPU</td><td>Optional — NVIDIA speeds up responses</td></tr>
-              <tr><td>Internet</td><td>Only for initial download</td></tr>
-            </table>
-          </div>
+      </div>
+      <div class="download-right">
+        <div class="sys-req">
+          <h4>System requirements</h4>
+          <div class="req-row"><span class="req-label">OS</span><span>Windows 10 / 11 (64-bit)</span></div>
+          <div class="req-row"><span class="req-label">RAM</span><span>8 GB min · 16 GB recommended</span></div>
+          <div class="req-row"><span class="req-label">Storage</span><span>5 GB free space</span></div>
+          <div class="req-row"><span class="req-label">CPU</span><span>Any modern x64 processor</span></div>
+          <div class="req-row"><span class="req-label">GPU</span><span>Optional (NVIDIA speeds up responses)</span></div>
+          <div class="req-row"><span class="req-label">Internet</span><span>Only for initial download</span></div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-inner">
-        <div class="footer-brand">
-          <span class="logo-hex">⬡</span>
-          <span class="footer-name">NOVA</span>
-          <p>Offline AI assistant for Windows.</p>
-        </div>
-        <div class="footer-links">
-          <div>
-            <h5>Product</h5>
-            <a href="features.html">Features</a>
-            <a href="#download">Download</a>
-            <a href="faq.html">FAQ</a>
-          </div>
-          <div>
-            <h5>Resources</h5>
-            <a href="docs.html">Documentation</a>
-            <a href="docs.html#quickstart">Quick start</a>
-            <a href="https://github.com/Cadet-Vikram/nova-ai">GitHub</a>
-          </div>
-          <div>
-            <h5>Powered by</h5>
-            <a href="https://ollama.com" target="_blank">Ollama</a>
-            <a href="https://github.com/ggerganov/whisper.cpp" target="_blank">Whisper</a>
-            <a href="https://www.electronjs.org" target="_blank">Electron</a>
-          </div>
-        </div>
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo">⬡ <span>NOVA</span></div>
+        <p>Offline AI assistant for Windows.<br/>Built with ❤️ for privacy.</p>
+        <a href="https://github.com/Cadet-Vikram/Nova-AI" target="_blank" class="gh-link footer-gh">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+          Cadet-Vikram/Nova-AI
+        </a>
       </div>
-      <div class="footer-bottom">
-        <span>© 2025 NOVA. Built with ❤️ for privacy.</span>
-        <span>Open source · MIT License</span>
+      <div class="footer-links">
+        <div><h5>Product</h5><a href="features.html">Features</a><a href="#download">Download</a><a href="faq.html">FAQ</a></div>
+        <div><h5>Resources</h5><a href="docs.html">Documentation</a><a href="docs.html#quickstart">Quick start</a><a href="https://github.com/Cadet-Vikram/Nova-AI/issues" target="_blank">Report issue</a></div>
+        <div><h5>Powered by</h5><a href="https://ollama.com" target="_blank">Ollama</a><a href="https://www.electronjs.org" target="_blank">Electron</a><a href="https://github.com/SYSTRAN/faster-whisper" target="_blank">faster-whisper</a></div>
       </div>
     </div>
-  </footer>
+    <div class="footer-bottom">
+      <span>© 2025 NOVA by <a href="https://github.com/Cadet-Vikram" target="_blank">Cadet-Vikram</a></span>
+      <span>MIT License · Open Source</span>
+    </div>
+  </div>
+</footer>
 
-  <script>
-    document.getElementById('hamburger').addEventListener('click', () => {
-      document.getElementById('navMobile').classList.toggle('open');
-    });
-  </script>
+<script>
+// ── Scroll reveal ──────────────────────────────────────────────────────────
+const revealEls = document.querySelectorAll('.reveal, .reveal-right');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+}, { threshold: 0.12 });
+revealEls.forEach(el => observer.observe(el));
+
+// ── Sticky nav shadow ──────────────────────────────────────────────────────
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 20);
+});
+
+// ── Mobile nav ────────────────────────────────────────────────────────────
+document.getElementById('hamburger').addEventListener('click', () => {
+  document.getElementById('navMobile').classList.toggle('open');
+});
+
+// ── Animated streaming text in hero window ────────────────────────────────
+const streamContent = "The simplest way is slicing:\n\ntext[::-1]\n\nThis returns a new string with characters in reverse order. It's Pythonic and works for any sequence.";
+let charIndex = 0;
+const streamEl = document.getElementById('streamText');
+
+function typeChar() {
+  if (charIndex < streamContent.length) {
+    const ch = streamContent[charIndex];
+    if (ch === '\n') {
+      streamEl.innerHTML += '<br/>';
+    } else if (streamContent.slice(charIndex, charIndex + 3) === '[::'|| streamContent.slice(charIndex).startsWith('text[:')) {
+      streamEl.innerHTML += ch;
+    } else {
+      streamEl.innerHTML += ch;
+    }
+    charIndex++;
+    // Vary typing speed for realism
+    const delay = ch === '\n' ? 120 : Math.random() * 30 + 15;
+    setTimeout(typeChar, delay);
+  } else {
+    // Restart after pause
+    setTimeout(() => {
+      charIndex = 0;
+      streamEl.innerHTML = '';
+      setTimeout(typeChar, 800);
+    }, 4000);
+  }
+}
+
+// Start after a delay so user sees the window first
+setTimeout(typeChar, 1800);
+
+// ── Parallax glow on mouse move ───────────────────────────────────────────
+document.addEventListener('mousemove', (e) => {
+  const glow = document.querySelector('.bg-glow');
+  const x = (e.clientX / window.innerWidth)  * 100;
+  const y = (e.clientY / window.innerHeight) * 100;
+  glow.style.background = `radial-gradient(600px circle at ${x}% ${y}%, rgba(124,106,255,0.07), transparent 70%)`;
+});
+</script>
 </body>
 </html>
